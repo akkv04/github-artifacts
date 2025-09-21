@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Upload artifact
-        uses: actions/upload-artifacts@4.6.2
+        uses: actions/upload-artifact@4.6.2
         with:
           name: ${{  env.FILE_NAME }}_artifact
           path: ./${{ env.FILE_NAME}}
