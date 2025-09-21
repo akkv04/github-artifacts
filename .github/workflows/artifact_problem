@@ -1,0 +1,19 @@
+name: Artifact problem
+
+on: [ push ]
+
+env: 
+  FILE_NAME: test_artifact
+
+jobs:
+  build:
+    name: Build and upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Upload artifact
+        uses: actions/upload-artifacts@4.6.2
+        with:
+          name: ${{  env.FILE_NAME }}_artifact
+          path: ./${{ env.FILE_NAME}}
